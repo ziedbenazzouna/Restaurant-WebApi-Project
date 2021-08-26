@@ -36,6 +36,7 @@ namespace RestaurantProject
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+            services.AddCors();
 
         }
 
@@ -61,8 +62,11 @@ namespace RestaurantProject
             }
 
             app.UseRouting();
+            app.UseCors(x=>x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {
