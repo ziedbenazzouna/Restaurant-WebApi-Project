@@ -7,7 +7,7 @@ namespace OA_Service
 {
     public interface IProductService
     {
-        IEnumerable<Product> GetAll();
-        Product GetById(int Id);
+        IEnumerable<Product> GetAllProduct();
+        Product GetProductById(int Id);
     }
 }

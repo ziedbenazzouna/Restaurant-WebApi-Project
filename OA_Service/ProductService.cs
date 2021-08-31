@@ -15,12 +15,12 @@ namespace OA_Service
             _repository = repository;
         }
 
-        public IEnumerable<Product> GetAll()
+        public IEnumerable<Product> GetAllProduct()
         {
             return _repository.GetAll();
         }
 
-        public Product GetById(int Id)
+        public Product GetProductById(int Id)
         {
             return _repository.GetById(Id);
         }
