@@ -29,9 +29,9 @@ namespace RestaurantProject
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-              //options.UseSqlServer(
-              //  Configuration.GetConnectionString("DefaultConnection")));
-              options.UseSqlite("Data Source = RestauXpressDB.db"));
+              options.UseSqlServer(
+                Configuration.GetConnectionString("DefaultConnection")));
+             // options.UseSqlite("Data Source = RestauXpressDB.db"));
             services.AddControllers();
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
             services.AddTransient<IProductService, ProductService>();
