@@ -3,6 +3,7 @@ using OA_Repository;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace OA_Service
 {
@@ -23,6 +24,12 @@ namespace OA_Service
         public Product GetProductById(int Id)
         {
             return _repository.GetById(Id);
+        }
+
+        public Product AddProduct(Product product)
+        {           
+              _repository.Add(product);
+            return GetProductById(product.Id);
         }
     }
 }

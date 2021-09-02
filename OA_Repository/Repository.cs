@@ -27,5 +27,15 @@ namespace OA_Repository
         {
             return entity.FirstOrDefault(x => x.Id == Id);
         }
+
+        public virtual void Add(T record)
+        {
+            if (entity == null)
+            {
+                throw new ArgumentNullException("entity");
+            }
+            entity.Add(record);
+            _context.SaveChanges();
+        }
     }
 }
