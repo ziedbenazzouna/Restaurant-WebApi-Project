@@ -28,4 +28,10 @@
     <ProjectReference Include="..\OA_Service\OA_Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="RestauXpressDB.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
