@@ -19,6 +19,7 @@ namespace RestaurantProject.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         //GET : /api/UserProfile
         public async Task<Object> GetUserProfile()
         {
