@@ -1,5 +1,11 @@
-<nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand text-white">RestauXpress</a>
-    <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
-  </nav>
+<div class="dropdown float-right" *ngIf="userDetails">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{userDetails.email}}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <li class="list-group-item"><strong>Username : </strong>{{userDetails.userName}}</li>
+      <a class="dropdown-item" (click)="onLogout()">Logout</a>
+    </div>
+  </div>
+
   
