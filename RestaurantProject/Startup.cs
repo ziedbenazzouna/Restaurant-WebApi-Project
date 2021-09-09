@@ -41,7 +41,7 @@ namespace RestaurantProject
               options.UseSqlServer(
                 Configuration.GetConnectionString("DefaultConnection")));
             //  options.UseSqlite("Data Source = RestauXpressDB.db"));
-            services.AddIdentity<IdentityUser, IdentityRole>()
+            services.AddIdentity<IdentityUser, IdentityRole>().AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
             services.Configure<IdentityOptions>(options =>
@@ -133,9 +133,9 @@ namespace RestaurantProject
             .AllowAnyMethod()
 
             );
-
-            app.UseAuthorization();
+            // Order is important
             app.UseAuthentication();
+            app.UseAuthorization();           
             app.UseDefaultFiles();
             app.UseStaticFiles();
 
